@@ -63,10 +63,10 @@ public class FlightManager implements FlightService {
 
         Flight flight = getById(flightId).getData();
 
-        if(flight.getDepartureTime().before(date)){
+        if(flight.getDepartureTime().after(date)){
             flight.setStatus(FlightStatusEnum.SCHEDULED.toString());
         }
-        else if(flight.getArrivalTime().after(date)){
+        else if(flight.getArrivalTime().before(date)){
             flight.setStatus(FlightStatusEnum.ARRIVED.toString());
         }
         else{
