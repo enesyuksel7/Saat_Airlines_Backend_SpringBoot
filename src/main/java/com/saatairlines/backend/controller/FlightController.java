@@ -51,7 +51,7 @@ public class FlightController {
     }
 
     @PutMapping("/setstatus")
-    public Result setStatus(@RequestParam("date") @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") Date date, @RequestParam long flightId){
+    public Result setStatus(@RequestParam("date") @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm") Date date, @RequestParam long flightId){
         return this.flightService.setStatus(date, flightId);
     }
 
