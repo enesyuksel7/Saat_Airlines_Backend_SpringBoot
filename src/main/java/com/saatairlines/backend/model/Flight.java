@@ -32,11 +32,11 @@ public class Flight {
     @Column(name = "price")
     float price;
 
-    @JsonFormat(shape= JsonFormat.Shape.STRING, pattern="dd-MM-yyyy HH:mm:ss")
+    @JsonFormat(shape= JsonFormat.Shape.STRING, pattern="dd-MM-yyyy HH:mm")
     @Column(name = "departure_time")
     Date departureTime;
 
-    @JsonFormat(shape= JsonFormat.Shape.STRING, pattern="dd-MM-yyyy HH:mm:ss")
+    @JsonFormat(shape= JsonFormat.Shape.STRING, pattern="dd-MM-yyyy HH:mm")
     @Column(name = "arrival_time")
     Date arrivalTime;
 
