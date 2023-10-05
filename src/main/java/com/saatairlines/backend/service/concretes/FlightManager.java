@@ -66,12 +66,13 @@ public class FlightManager implements FlightService {
         if(flight.getDepartureTime().compareTo(date) < 0){
             flight.setStatus(FlightStatusEnum.SCHEDULED.toString());
         }
-        else if(flight.getArrivalTime().compareTo(date) > 0){
-            flight.setStatus(FlightStatusEnum.ARRIVED.toString());
-        }
         else{
             flight.setStatus(FlightStatusEnum.DEPARTED.toString());
         }
+        if(flight.getArrivalTime().compareTo(date) > 0){
+            flight.setStatus(FlightStatusEnum.ARRIVED.toString());
+        }
+
         this.flightDao.save(flight);
         return new SuccessResult();
     }
